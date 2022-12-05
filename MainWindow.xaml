@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="DarkMagenta">
+        <Menu VerticalAlignment="Top" Background="Transparent">
+            <MenuItem Header="Файл" Foreground="White">
+                <MenuItem Header="О программе" Click="AboutProgram_Click" Foreground="Black" />
+                <MenuItem Header="Выход" Click="Exit_Click" Foreground="Black" />
+            </MenuItem>
+        </Menu>
+
+        <DataGrid x:Name="dataGrid" Margin="10,60,255,30">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Quantity}" Header="Кол-во вещей"/>
+                <DataGridTextColumn Binding="{Binding Path=Weight}" Header="Вес"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="QuantityTextBox" ToolTip="Количество" HorizontalAlignment="Left" Margin="582,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="30"/>
+        <TextBox x:Name="WeightTextBox" ToolTip="Вес" HorizontalAlignment="Left" Margin="582,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Height="30"/>
+        <Button x:Name="AddButton" Content="Добавить" HorizontalAlignment="Left" Margin="627,242,0,0" VerticalAlignment="Top" Height="36" Width="95"  Click="AddButton_Click"/>
+        <Button x:Name="FindButton" Content="Найти" HorizontalAlignment="Left" Margin="627,312,0,0" VerticalAlignment="Top" Height="36" Width="95" Click="FindButton_Click"/>
+
+    </Grid>
+</Window>
